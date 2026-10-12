@@ -73,7 +73,7 @@ export default function AboutSection() {
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button variant="primary" size="md" href="#" icon={<ArrowRight size={16} />}>
+              <Button variant="primary" size="md" href="/about" icon={<ArrowRight size={16} />}>
                 Learn More
               </Button>
               <div className="flex items-center gap-2 text-sm">
