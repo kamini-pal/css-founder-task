@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ─── Primary Brand — Teal (matches task.jpg) ─── */
+  --color-primary: #00BFA6;
+  --color-primary-dark: #00A896;
+  --color-primary-light: #E6FFF9;
+  --color-primary-mint: #D8FFF4;
+
+  /* ─── Accent — Bright Teal ─── */
+  --color-accent: #00D4B8;
+  --color-accent-light: #B2DFDB;
+
+  /* ─── Dark Navy ─── */
+  --color-navy: #071B34;
+  --color-navy-light: #0E2A4A;
+
+  /* ─── Neutrals ─── */
+  --color-dark: #1E293B;
+  --color-dark-deep: #0F172A;
+  --color-heading: #0A1F44;
+  --color-text: #4A5568;
+  --color-text-light: #718096;
+  --color-bg-light: #F7FAFC;
+  --color-bg-gray: #F1F5F9;
+  --color-border: #E2E8F0;
+  --color-white: #FFFFFF;
+
+  /* ─── Accent Colors ─── */
+  --color-star: #F59E0B;
+  --color-badge-green: #10B981;
+  --color-badge-blue: #3B82F6;
+  --color-badge-teal: #00897B;
+
+  /* ─── Font Variable ─── */
+  --font-poppins: var(--font-poppins-var);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base Resets ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── Utility: Section Container ─── */
+.section-container {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ─── Teal Highlighted Text ─── */
+.text-highlight {
+  color: var(--color-accent);
+}
+
+/* ─── Section Label (small uppercase) ─── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  width: 2rem;
+  height: 2px;
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+/* Decorative mint circles used in CTA / footer (task.jpg) */
+.blob-mint {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 191, 166, 0.18) 0%, rgba(0, 191, 166, 0.05) 70%, transparent 100%);
+  pointer-events: none;
 }
